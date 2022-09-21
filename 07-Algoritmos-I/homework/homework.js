@@ -6,15 +6,26 @@ function factorear(num) {
   // los factores por los cuales se va dividiendo a dicho número (De menor a mayor)
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
-  let newArr = [];
-  for (let i = 1; i < num; i++) {
+
+  let newArr = [1];
+  for (let i = 2; i < num + 1; i++) {
     if (num % i === 0) {
-      console.log(i);
-      newArr.push(i);
-      num /= i;
-    }
-  }
-  return newArr;
+	num /= i
+	newArr.push(i);
+	i--
+    } 
+  } return newArr
+
+  // let newArr = [];
+
+  // if (num < 0) {
+  //   return -1;
+  // } else if (num === 0) {
+  //   return 1;
+  // } else {
+  //   console.log(newArr);
+  //   return newArr.push(num * factorear(num / 1));
+  // }
 }
 
 function bubbleSort(array) {
